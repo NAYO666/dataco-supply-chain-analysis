@@ -1,0 +1,9 @@
+name: dataco-supply-chain
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pip
+  - mysql=8.0
+  - pip:
+      - -r requirements.txt

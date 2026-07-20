@@ -1,0 +1,37 @@
+# 本机凭据：只提交 .env.example，占位符不能替代真实密码
+.env
+.env.*
+!.env.example
+
+# 原始数据和可再生成的星型 CSV 不进入 Git；下载与生成方法见 README
+data/raw/
+data/star_csv/
+!data/README.md
+
+# Jupyter / Python 临时文件
+notebooks/.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+notebooks/D1_探索.ipynb
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# 自动执行产生的中间文件；最终 PDF 例外
+output/notebooks/
+tmp/
+output/*
+!output/pdf/
+!output/pdf/*.pdf
+
+# 编辑器与本机工具状态
+.idea/
+.vscode/
+anaconda_projects/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 第三方材料；项目自产报告保存在 report/ 与 output/pdf/
+docs/*.pdf
