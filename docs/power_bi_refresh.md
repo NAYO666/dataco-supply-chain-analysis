@@ -2,7 +2,7 @@
 
 ## 直接查看
 
-`power bi/power bi看板.pbix` 使用 Import 模式，演示数据已经嵌入文件。下载仓库后可直接打开两页看板，不需要作者的 MySQL 密码，也不需要先运行数据管道。
+`power bi/power bi看板.pbix` 使用 Import 模式，演示数据已经嵌入文件。下载仓库后可直接打开两页看板，无需数据库凭据，也无需先运行数据管道。
 
 ## 用自己的复现数据刷新
 
@@ -30,4 +30,3 @@
 ## 口径说明
 
 Power BI 页面中的核心指标均与 SQL 和 pandas 结果交叉核对一致。履约率按订单级去重计算；迟发量占比、GMV、利润和库存资金等可加指标按订单行级或 SKU 级聚合，详细定义见 [kpi_definitions.md](kpi_definitions.md)。
-

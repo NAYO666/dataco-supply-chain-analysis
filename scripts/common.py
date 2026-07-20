@@ -19,7 +19,7 @@ OUTPUT_DIR = PROJECT_ROOT / "output"
 def load_project_env() -> None:
     if not ENV_FILE.exists():
         raise FileNotFoundError(
-            "缺少 .env：请复制 .env.example 为 .env，并填写你自己的 MySQL 连接信息"
+            "缺少 .env：请复制 .env.example 为 .env，并填写本机 MySQL 连接信息"
         )
     load_dotenv(ENV_FILE)
     required = ["MYSQL_USER", "MYSQL_PWD", "MYSQL_HOST", "MYSQL_PORT", "MYSQL_DB"]
@@ -49,4 +49,3 @@ def ensure_output_dirs() -> None:
     STAR_DIR.mkdir(parents=True, exist_ok=True)
     (OUTPUT_DIR / "notebooks").mkdir(parents=True, exist_ok=True)
     (OUTPUT_DIR / "pdf").mkdir(parents=True, exist_ok=True)
-

@@ -1,5 +1,5 @@
 r"""
-00_clean_load.py  —  D3：pandas 最小清洗 → 写入 MySQL staging 表
+00_clean_load.py  —  pandas 数据清洗并写入 MySQL staging 表
 运行： python notebooks/00_clean_load.py
 产出： MySQL 库 dataco 里的表 stg_orders（staging，未建模的宽表）
 凭据：读取项目根目录 .env；公开仓库只提供 .env.example 占位模板。
@@ -94,8 +94,8 @@ print("[写入] 开始灌数据（18 万行，约 1-2 分钟）...")
 df.to_sql("stg_orders", engine, if_exists="replace", index=False,
           chunksize=1000, method="multi")
 
-# ── 7. 验收：staging 行数 == CSV 行数 ───────────────────────────────────
+# ── 7. 验证：staging 行数与 CSV 行数一致 ────────────────────────────────
 with engine.connect() as conn:
     n_db = conn.execute(text("SELECT COUNT(*) FROM stg_orders")).scalar()
 ok = "[OK] 一致" if n_db == len(df) else "[FAIL] 不一致，排查"
-print(f"[验收] stg_orders 行数 = {n_db}  |  DataFrame 行数 = {len(df)}  |  {ok}")
+print(f"[验证] stg_orders 行数 = {n_db}  |  DataFrame 行数 = {len(df)}  |  {ok}")

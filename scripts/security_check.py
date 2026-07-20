@@ -9,7 +9,7 @@ from pathlib import Path
 from common import PROJECT_ROOT
 
 
-EXCLUDED_DIRS = {".git", "data", "tmp", "anaconda_projects", ".ipynb_checkpoints"}
+EXCLUDED_DIRS = {".git", "data", "tmp", "plan", "anaconda_projects", ".ipynb_checkpoints"}
 EXCLUDED_NAMES = {"D1_探索.ipynb"}
 TEXT_SUFFIXES = {".py", ".sql", ".md", ".txt", ".yml", ".yaml", ".json", ".ipynb", ".example"}
 WINDOWS_ABSOLUTE = re.compile(r"[A-Za-z]:\\(?:Users|kaggle|anaconda|Program Files)", re.I)

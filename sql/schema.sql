@@ -1,5 +1,5 @@
 -- =====================================================================
--- schema.sql — DataCo 供应链项目 星型模型 DDL（D4 产出）
+-- schema.sql — DataCo 供应链项目星型模型 DDL
 -- 库：dataco   |   源：stg_orders（清洗后 staging 宽表，180519 行 × 31 列）
 -- 模型：fact_order_item（事实表，粒度=订单行）
 --       + dim_customer / dim_product / dim_date（3 张维表）
